@@ -1,5 +1,6 @@
 """Setup Package Module"""
 
+import timehoarder
 from pathlib import Path
 from setuptools import find_packages, setup
 
@@ -8,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="timehoarder",
-    version="0.1.0",
+    version=timehoarder.__version__,
     description="Identify business days that are overbooked with meetings and 'hoard' time by generating Outlook calendar appointments for focus time.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -16,5 +17,5 @@ setup(
     license="MIT",
     author="Martha Bass",
     author_email="mmachirbass@gmail.com",
-    packages=find_packages(where=".", exclude=('demos',))
+    py_modules=["timehoarder"],
 )
